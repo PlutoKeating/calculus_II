@@ -1,0 +1,46 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite / React build output
+calculus-study-site/dist/
+calculus-study-site/dist-ssr/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Intermediate generated files (source inputs, not outputs)
+scratch/txt/
+scratch/raw_input.json
+
+# Claude skills (track the skill file but ignore large intermediate data)
+.claude/skills/universal-exam-cram-coach/tests/
+.claude/skills/universal-exam-cram-coach/benchmark/
+
+# Temp
+.tmp/
+*.log

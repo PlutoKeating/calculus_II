@@ -1,0 +1,3 @@
+[submodule ".claude/skills/universal-exam-cram-coach"]
+	path = .claude/skills/universal-exam-cram-coach
+	url = git@github.com:ZeKaiNie/universal-examprep-skill.git
