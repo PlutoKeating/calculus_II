@@ -87,13 +87,30 @@ The production-ready static assets will be outputted to `dist/`, ready to be ser
 
 ---
 
-## ☁️ Continuous Deployment with Cloudflare Pages
+## ☁️ Cloudflare Pages Deployment Guide
 
-This repository's frontend directory `calculus-study-site/` is fully automated and connected to **Cloudflare Pages**:
-- **Framework Preset:** Vite
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Production URL:** `https://calculus-study-site.pages.dev` (or your custom domain)
+This decoupled web application (`calculus-study-site/`) is perfectly engineered for seamless hosting on **Cloudflare Pages** with automated CI/CD.
+
+### Step-by-Step Deployment Configuration
+
+1. **Log in to Cloudflare Dashboard:** Go to the [Cloudflare Dashboard](https://dash.cloudflare.com/) and navigate to **Workers & Pages** > **Pages** > **Connect to Git**.
+2. **Select Repository:** Connect your GitHub account and select your `calculus_II` repository.
+3. **Configure Build Settings:** Enter the following exact settings in the deployment configuration page:
+
+| Configuration Field | Target Setting / Value | Explanation |
+| :--- | :--- | :--- |
+| **Project Name** | `calculus-study-site` | Your public subdomain (e.g., `calculus-study-site.pages.dev`) |
+| **Production Branch** | `main` | The default branch to trigger live production deployments |
+| **Framework Preset** | **Vite** | Auto-configures standard Vite single-page application presets |
+| **Root Directory** | `calculus-study-site` | **[CRITICAL]** Points Cloudflare to the sub-folder containing the frontend project |
+| **Build Command** | `npm run build` | Compiles the React + TS + Tailwind v4 project |
+| **Build Output Directory** | `dist` | The folder containing production-ready compiled static HTML/JS/CSS |
+
+4. **Environment Variables (Optional):** If your app uses custom APIs, configure them under the **Environment variables** section.
+5. **Click "Save and Deploy":** Cloudflare will instantly pull your code, install dependencies, run the Vite build, and deploy your site live!
+
+> [!IMPORTANT]
+> Because we have set the **Root Directory** to `calculus-study-site`, Cloudflare Pages will run all installation and build commands relative to that subdirectory. Do not set the build command to `cd calculus-study-site && npm run build` unless Root Directory is left blank.
 
 > [!NOTE]
-> Every commit pushed to the `main` branch automatically triggers a deployment run on Cloudflare Pages, ensuring your live study site is always up-to-date with your latest exam-prep notes.
+> Every commit pushed to your GitHub `main` branch will trigger an automated build and deploy. Preview deployments are also automatically generated for non-main branches!
