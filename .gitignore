@@ -5,8 +5,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Vite / React build output
-calculus-study-site/dist/
-calculus-study-site/dist-ssr/
+study-site/dist/
+study-site/dist-ssr/
 
 # Environment files
 .env
@@ -37,9 +37,8 @@ Thumbs.db
 scratch/txt/
 scratch/raw_input.json
 
-# Claude skills (track the skill file but ignore large intermediate data)
-.claude/skills/universal-exam-cram-coach/tests/
-.claude/skills/universal-exam-cram-coach/benchmark/
+# Claude folders
+.claude/
 
 # Temp
 .tmp/

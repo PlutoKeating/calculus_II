@@ -45,7 +45,7 @@ Are you stressed about your upcoming Calculus II final exam? Say goodbye to endl
 
 ```bash
 calculus/
-├── calculus-study-site/     # 💻 Decoupled React+Vite web application
+├── study-site/              # 💻 Decoupled React+Vite web application
 │   ├── src/                 #   └─ Study application source code
 │   └── dist/                #   └─ Build output (deployed on Cloudflare Pages)
 ├── references/              # 📚 Study Raw Source Materials
@@ -67,7 +67,7 @@ Get the React app running on your local machine in under a minute:
 
 ```bash
 # Navigate to the study site folder
-cd calculus-study-site
+cd study-site
 
 # Install dependencies
 npm install
@@ -89,7 +89,7 @@ The production-ready static assets will be outputted to `dist/`, ready to be ser
 
 ## ☁️ Cloudflare Pages Deployment Guide
 
-This decoupled web application (`calculus-study-site/`) is perfectly engineered for seamless hosting on **Cloudflare Pages** with automated CI/CD.
+This decoupled web application (`study-site/`) is perfectly engineered for seamless hosting on **Cloudflare Pages** with automated CI/CD.
 
 ### Step-by-Step Deployment Configuration
 
@@ -102,7 +102,7 @@ This decoupled web application (`calculus-study-site/`) is perfectly engineered 
 | **Project Name** | `calculus-study-site` | Your public subdomain (e.g., `calculus-study-site.pages.dev`) |
 | **Production Branch** | `main` | The default branch to trigger live production deployments |
 | **Framework Preset** | **Vite** | Auto-configures standard Vite single-page application presets |
-| **Root Directory** | `calculus-study-site` | **[CRITICAL]** Points Cloudflare to the sub-folder containing the frontend project |
+| **Root Directory** | `study-site` | **[CRITICAL]** Points Cloudflare to the sub-folder containing the frontend project |
 | **Build Command** | `npm run build` | Compiles the React + TS + Tailwind v4 project |
 | **Build Output Directory** | `dist` | The folder containing production-ready compiled static HTML/JS/CSS |
 
@@ -110,7 +110,7 @@ This decoupled web application (`calculus-study-site/`) is perfectly engineered 
 5. **Click "Save and Deploy":** Cloudflare will instantly pull your code, install dependencies, run the Vite build, and deploy your site live!
 
 > [!IMPORTANT]
-> Because we have set the **Root Directory** to `calculus-study-site`, Cloudflare Pages will run all installation and build commands relative to that subdirectory. Do not set the build command to `cd calculus-study-site && npm run build` unless Root Directory is left blank.
+> Because we have set the **Root Directory** to `study-site`, Cloudflare Pages will run all installation and build commands relative to that subdirectory. Do not set the build command to `cd study-site && npm run build` unless Root Directory is left blank.
 
 > [!NOTE]
 > Every commit pushed to your GitHub `main` branch will trigger an automated build and deploy. Preview deployments are also automatically generated for non-main branches!
